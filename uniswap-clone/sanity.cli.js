@@ -1,8 +1,8 @@
 import {defineCliConfig} from 'sanity/cli'
-
+import {config} from './config'
 export default defineCliConfig({
   api: {
-    projectId: 'nborxtej',
-    dataset: 'production'
-  }
+    projectId: config.projectId,
+    dataset: 'production',
+  },
 })

@@ -2,12 +2,12 @@ import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
-
+import {config} from './config'
 export default defineConfig({
   name: 'default',
-  title: 'uniswap-clone',
+  title: config.title,
 
-  projectId: 'nborxtej',
+  projectId: config.projectId,
   dataset: 'production',
 
   plugins: [deskTool(), visionTool()],
