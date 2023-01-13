@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { TransactionContext } from "../context/TransactionContext.js";
 import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
 import { AiOutlineDown } from "react-icons/ai";
@@ -22,6 +23,9 @@ const style = {
 
 export default function HeaderComponent() {
   const [selectedNav, setSelectedNav] = useState("swap");
+  // const { connectWallet, currentAccount } = useContext(TransactionContext);
+  const result = useContext(TransactionContext);
+  console.log("result", result);
   return (
     <>
       <div className={style.wrapper}>
