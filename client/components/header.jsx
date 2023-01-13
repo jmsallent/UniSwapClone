@@ -24,6 +24,7 @@ const style = {
 export default function HeaderComponent() {
   const [selectedNav, setSelectedNav] = useState("swap");
   // const { connectWallet, currentAccount } = useContext(TransactionContext);
+  // FIX: Context not working right
   const result = useContext(TransactionContext);
   console.log("result", result);
   return (
