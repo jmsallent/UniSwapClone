@@ -23,10 +23,11 @@ const style = {
 
 export default function HeaderComponent() {
   const [selectedNav, setSelectedNav] = useState("swap");
-  // const { connectWallet, currentAccount } = useContext(TransactionContext);
-  // FIX: Context not working right
-  const result = useContext(TransactionContext);
-  console.log("result", result);
+  const { connectWallet, currentAccount } = useContext(TransactionContext);
+  console.log("currentAccount", currentAccount);
+  const handleonClick = () => {
+    connectWallet();
+  };
   return (
     <>
       <div className={style.wrapper}>
@@ -51,7 +52,10 @@ export default function HeaderComponent() {
           </div>
 
           <div className={`${style.button} ${style.buttonPadding}`}>
-            <div className={`${style.buttonAccent} ${style.buttonPadding}`}>
+            <div
+              className={`${style.buttonAccent} ${style.buttonPadding}`}
+              onClick={handleonClick}
+            >
               Connect Wallet
             </div>
           </div>
